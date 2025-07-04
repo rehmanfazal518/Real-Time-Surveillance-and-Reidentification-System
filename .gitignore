@@ -1,0 +1,18 @@
+# Ignore Expo folders
+.expo/
+
+# Ignore Django venv and cache
+django/surveillance_system/venv/
+
+django/surveillance_system/core/__pycache__/
+django/surveillance_system/core/migrations/
+django/surveillance_system/core/utils/__pycache__/
+django/surveillance_system/core/views/__pycache__/
+
+# Ignore Frontend node_modules and Expo
+frontend/.expo/
+frontend/node_modules/
+
+# Ignore Mobile app node_modules and Expo
+mobileapp/.expo/
+mobileapp/node_modules/
