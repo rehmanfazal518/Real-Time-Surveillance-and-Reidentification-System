@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "Child_Safety",
+    "slug": "Child_Safety",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/log.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/log.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "usesCleartextTraffic": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/log.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.rfazal853.Child_Safety"
+    },
+    "web": {
+      "favicon": "./assets/splash.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a82f6721-908d-4de0-b4e0-70fe7c26ab28"
+      }
+    }
+  }
+}

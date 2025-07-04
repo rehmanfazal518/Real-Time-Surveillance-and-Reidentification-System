@@ -1,0 +1,37 @@
+mobileapp/
+    .env
+    .gitignore
+    App.js
+    app.json
+    babel.config.js
+    index.js
+    package-lock.json
+    package.json
+    projectStructure.txt
+    .expo/
+        devices.json
+        packager-info.json
+        README.md
+        settings.json
+        web/
+            cache/
+                production/
+                    images/
+                        favicon/
+                            favicon-48.png
+    .git/
+        ...
+        (Git metadata files and folders)
+    assets/
+        favicon.png
+        splash.png
+    components/
+        PrimaryButton.js
+    config/
+    constants/
+        theme.js
+    navigation/
+        AppNavigator.js
+    node_modules/
+        ...
+        (Standard npm modules)

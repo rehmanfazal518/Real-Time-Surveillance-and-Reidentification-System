@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Camera Feeds</h1>
+      <div class="header-actions">
+        <button
+          id="profileBtn"
+          class="profile-btn"
+          onclick="openProfileModal()"
+          title="Profile"
+        >Profile</button>
+        <button
+          id="logoutBtn"
+          class="logout-btn"
+          onclick="logoutUser()"
+          title="Logout"
+        ></button>
+      </div>
+    </header>
+
+    <main class="feed-wrapper">
+      <div class="camera-feed-block">
+        <div
+          class="camera-feed"
+          id="camera1"
+          onclick="toggleFullScreen('camera1')"
+        >
+          <p>Cam 1</p>
+          <img
+            src="http://127.0.0.1:8000/api/stream-camera/1/"
+            alt="Camera 1"
+          />
+        </div>
+        <div
+          class="camera-feed"
+          id="camera2"
+          onclick="toggleFullScreen('camera2')"
+        >
+          <p>Cam 2</p>
+          <img
+            src="http://127.0.0.1:8000/api/stream-camera/2/"
+            alt="Camera 2"
+          />
+        </div>
+      </div>
+
+      <section class="activity-log-section">
+        <div class="log-header">
+          <h3>Activity Log</h3>
+          <button class="reid-btn" onclick="openRenameModal()">
+            🖊️ Rename ID
+          </button>
+        </div>
+        <ul id="activityLog" class="log-list">
+          <!-- JS will prepend <li> items here -->
+        </ul>
+      </section>
+    </main>
+
+    <!-- Fullscreen overlay -->
+    <div class="fullscreen-video" id="fullscreen-video" style="display: none">
+      <button
+        class="back-btn"
+        onclick="closeFullScreen()"
+        title="Back"
+      ></button>
+      <img id="fullscreen-video-source" alt="full-view" />
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profileModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span id="closeProfileModal" class="close-btn">&times;</span>
+        <h3>User Profile</h3>
+
+        <!-- Tab Navigation -->
+        <div class="tab-nav">
+          <button class="tab-btn active" onclick="switchTab('profileDetails')">
+            Profile Details
+          </button>
+          <button class="tab-btn" onclick="switchTab('changePassword')">
+            Change Password
+          </button>
+        </div>
+
+        <!-- Profile Details Tab -->
+        <div id="profileDetails" class="tab-content">
+          <div class="profile-info">
+            <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+            <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+            <p><strong>Mobile:</strong> <span id="profileMobile"></span></p>
+            <p><strong>CNIC:</strong> <span id="profileCnic"></span></p>
+            <p>
+              <strong>Current Address:</strong>
+              <span id="profileAddress"></span>
+            </p>
+            <p><strong>Role:</strong> <span id="profileRole"></span></p>
+          </div>
+        </div>
+
+        <!-- Change Password Tab -->
+        <div id="changePassword" class="tab-content" style="display: none">
+          <form id="passwordChangeForm" onsubmit="changePassword(event)">
+            <input
+              type="password"
+              id="currentPassword"
+              placeholder="Current Password"
+              required
+            />
+            <input
+              type="password"
+              id="newPassword"
+              placeholder="New Password"
+              required
+            />
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm New Password"
+              required
+            />
+            <div class="form-footer">
+              <button type="submit" class="primary-btn">Update Password</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rename Person Modal -->
+    <div id="renameModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span id="closeRenameModal" class="close-btn">&times;</span>
+        <h3>Rename Person ID</h3>
+        <input type="number" id="renamePid" placeholder="Enter Person ID" />
+        <input type="text" id="renameName" placeholder="Enter New Name" />
+        <input type="text" id="renameParent" placeholder="Parent Email or Username" />
+        <button onclick="submitRename()" class="primary-btn">Submit</button>
+      </div>
+    </div>
+
+    <div id="customModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close-btn">&times;</span>
+        <p id="modalMessage"></p>
+      </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

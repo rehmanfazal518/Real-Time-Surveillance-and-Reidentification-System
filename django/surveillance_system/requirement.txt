@@ -1,0 +1,13 @@
+Django
+channels
+opencv-python
+torch
+torchvision
+torchaudio
+scipy
+ultralytics
+deep-sort-realtime
+torchreid
+gdown
+django-cors-headers
+tensorboard
